@@ -1,5 +1,4 @@
 import React from 'react'
-import Font, { Text } from 'react-font'
 import { useNavigate } from 'react-router-dom';
 import 
  {BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify}
@@ -17,9 +16,7 @@ function Header({OpenSidebar}) {
             <CgMenuGridO className='icon text-3xl relative -left-10' onClick={OpenSidebar}/>
         </div>
         <div className='header-right flex w-full justify-between'>
-            <Font family='poppins'>
-              <p onClick={() => {navigate('/')}} className=' font-bold text-xl'>CRYPTO TRADE</p>
-            </Font>
+            <p onClick={() => {navigate('/')}} className=' font-bold text-xl'>CRYPTO TRADE</p>
             <BsPersonCircle className='icon text-2xl'/>
         </div>
     </header>

@@ -1,36 +1,7 @@
 import React, { useState } from 'react';
-import QRCode from 'react-qr-code';
 import { FaRegCreditCard } from "react-icons/fa6";
 import { FaQrcode } from "react-icons/fa";
 const PaymentGatewayQR = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    mobile: '',
-    amount: '',
-  });
-  const [qrCodeData, setQrCodeData] = useState('');
-  const [transactionCompleted, setTransactionCompleted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handlePayNow = () => {
-    if (formData.name && formData.mobile && formData.amount) {
-      const dataToEncode = JSON.stringify(formData);
-      setQrCodeData(dataToEncode);
-      setTransactionCompleted(false);
-    } else {
-      alert('Please fill all the fields!');
-    }
-  };
-
-  const handleTransactionComplete = () => {
-    setTransactionCompleted(true);
-    setQrCodeData('');
-    alert('Transaction completed successfully!');
-  };
 
   return (
     <div className='border lg:w-[500px] mx-auto h-[600px] px-6 py-6 rounded-xl border-gray-700'>
@@ -86,27 +57,6 @@ const PaymentGatewayQR = () => {
       >
         Pay Now
       </button>
-
-      {qrCodeData && (
-        <div>
-          <h3>Scan to Pay</h3>
-          <QRCode value={qrCodeData} />
-          <button
-            onClick={handleTransactionComplete}
-            style={{
-              backgroundColor: '#007bff',
-              color: '#fff',
-              padding: '10px 20px',
-              border: 'none',
-              cursor: 'pointer',
-              marginTop: '10px',
-            }}
-          >
-            Transaction Complete
-          </button>
-        </div>
-      )}
-
     </div>
   );
 };

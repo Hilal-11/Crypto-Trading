@@ -2,7 +2,6 @@ import React ,{useEffect} from 'react'
 import dashBoardHeadingImage from '../Assets/coin.png'
 import CoinsTable from './CoinsTable'
 import MarketMegaChart from './MarketMegaChart'
-import Font, { Text } from 'react-font'
 
 function Home() {
 
