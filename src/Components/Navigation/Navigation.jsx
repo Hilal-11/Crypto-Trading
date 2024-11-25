@@ -3,9 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import {NavLink , Link} from 'react-router-dom'
 import { clsx } from 'clsx';
-import Font, { Text } from 'react-font'
 import { useNavigate } from 'react-router-dom';
-// import bullLogo2 from '../../Assets/bullLogo2.png '
 import logo from '../../Assets/bullLogo2.png'
 function Navigation() {
 
