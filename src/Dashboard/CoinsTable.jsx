@@ -25,14 +25,12 @@ function CoinsTable() {
     const buyButtonHandler = (event) => {
         navigate('/PaymentGateway')
     }
-
-    console.log(coinsData)
         
   return (
     <div className='w-screen h-auto px-0'>
     <section className="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
     <div className="px-0 mx-auto max-w-screen-3xl lg:px-12">
-      <div className="relative overflow-hidden shadow-md   sm:rounded-lg">
+      <div className=" overflow-hidden shadow-md   sm:rounded-lg">
           <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
         </div>
 
@@ -40,11 +38,11 @@ function CoinsTable() {
               <table className="w-full text-sm text-left dark:text-black">
                   <thead className="text-md text-black font-bold uppercase bg-orange-500">
                       <tr>
-                          <th scope="col" className="p-5">
+                          <th scope="col" className="p-0">
                              
                           </th>
-                          <th scope="col" className="px-10 py-3">Name</th>
-                          <th scope="col" className="px-10 py-3">Market CAP</th>
+                          <th scope="col" className=" px-0 py-3">Name</th>
+                          <th scope="col" className="px-4 py-3">Market CAP</th>
                           <th scope="col" className="px-10 py-3">FD Market CAP</th>
                           <th scope="col" className="px-10 py-3">Current Price</th>
                           <th scope="col" className="px-10 py-3">Total Volums</th>
@@ -69,15 +67,15 @@ function CoinsTable() {
                                   <label className="sr-only">checkbox</label>
                               </div>
                           </td>
-                          <th scope="row" className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          <th scope="row" className="flex items-center px-0 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               <img src={coin.image} alt="iMac Front Image" className="w-auto h-8 mr-3"/>
                               {coin.id}
                           </th>
                           
                           
        
-                          <td className="px-4 py-2">
-                              <span className="bg-primary-100 text-white  font-medium px-2 py-0.5 rounded dark:bg-primary-900">{coin.market_cap}</span>
+                          <td className="px-0 py-2">
+                              <span className="bg-primary-100 lg:text-white text-black   font-medium px-0 py-0.5 rounded dark:bg-primary-900">{coin.market_cap}</span>
                           </td>
                           <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               <div className="flex items-center">

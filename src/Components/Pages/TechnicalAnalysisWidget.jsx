@@ -34,12 +34,12 @@ function TechnicalAnalysisWidget() {
       
   return (
     
-    <div className='h-auto border my-10 mx-auto bg-slate-900 w-full  rounded-2xl grid grid-cols-1 lg:grid-cols-1 gap-20 px-4 py-5 text-justify lg:p-10 text-white'>
+    <div className='z-0 h-auto border my-10 mx-auto bg-slate-900 w-full  rounded-2xl grid grid-cols-1 lg:grid-cols-1 gap-20 px-4 py-5 text-justify lg:p-10 text-white'>
           <h1 className='text-center font-extrabold text-4xl lg:text-7xl text-orange-500'>Unlock the Secrets of Crypto Markets with Technical Analysis</h1>
           <p className='text-xl text-justify lg:text-center font-medium lg:px-20'>Analyze price movements, spot emerging trends, and make confident trading decisions using our powerful technical analysis tools. Utilize indicators tailored for crypto markets, such as On-Balance Volume (OBV), Relative Strength Index (RSI), and Moving Averages ,Access interactive, real-time charts with the ability to customize timeframes, add trendlines, and overlay key technical patterns. Gauge the mood of the market with sentiment indicators that analyze trading volumes and crypto news trends. Explore beginner-friendly guides to understand key concepts like candlestick patterns, Fibonacci retracements, and oscillators</p>
 
-          <div className="tradingview-widget-container" ref={widgetContainerRef}>
-            <div className="tradingview-widget-container__widget"></div>
+          <div className="tradingview-widget-container z-0" ref={widgetContainerRef}>
+            <div className="tradingview-widget-container__widget z-0"></div>
       
          </div>
 

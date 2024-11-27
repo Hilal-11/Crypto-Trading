@@ -2,8 +2,9 @@ import React from 'react'
 import './ImageSpining.css'
 import signUpLogImg from '../../Assets/signUpLogImg.webp'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 function SignUp() {
+    const [isSignUp , setIsSignUp] = useState(false)
     const [formData, setFormData] = useState({
         fullName: '',
         username: '',
@@ -19,18 +20,23 @@ function SignUp() {
     
       const handleSubmit = (e) => {
         e.preventDefault();
+        setIsSignUp(true)
         // Handle form submission
         console.log(formData);
       };
 
-      const navigate = useNavigate('');
+      if(isSignUp) {
+        return <Navigate to="/Login"/>
+      }else{
+        console.log("please create account first")
+      }
 
 
 
   return (
       
 <div>  
-    <div className='rounded-lg bg-transparent lg:h-auto lg:w-[80%] px-4 lg:px-10 py-10 -my-4 lg:grid grid-cols-2 justify-center mx-auto gap-10 lg:my-10'>
+    <div className=' rounded-lg bg-transparent lg:h-auto lg:w-[80%] px-4 lg:px-10 py-10 -my-4 lg:grid grid-cols-2 justify-center mx-auto gap-10 lg:my-10'>
         <div className=' flex justify-center my-0 lg:my-0 order-2 lg:order-1'>
             <img className='rotate w-[70%] lg:w-full' src={signUpLogImg} alt="" />
         </div>
@@ -43,7 +49,7 @@ function SignUp() {
 
             {/* Full Name */}
             <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fullName">
+              <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="fullName">
                 Full Name
               </label>
               <input
@@ -129,7 +135,6 @@ function SignUp() {
             {/* Submit Button */}
             <div className="flex items-center justify-center py-6 w-full">
               <button 
-                onClick={() => { navigate('/AdminPanel') }}
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 w-full rounded focus:outline-none focus:shadow-outline "
               >

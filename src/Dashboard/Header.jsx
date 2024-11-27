@@ -11,7 +11,7 @@ function Header({OpenSidebar}) {
   const navigate = useNavigate('')
 
   return (
-    <header className='header bg-blue-600 text-white h-[60px] lg:h-[80px]'>
+    <header className='z-30 header bg-blue-600 text-white h-[60px] lg:h-[80px] -my-6'>
         <div className='menu-icon'>
             <CgMenuGridO className='icon text-3xl relative -left-10' onClick={OpenSidebar}/>
         </div>

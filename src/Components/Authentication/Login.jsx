@@ -1,15 +1,10 @@
-import React, { useState } from 'react'
-import  Login3d  from '../../Assets/Login3d.jpg'
+import React, { useEffect, useState } from 'react'
 import  Login3d2  from '../../Assets/coin.png'
-// import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import './Login.css'
-function Login(props) {
-    // const [loginFormData , setloginFormData] = useState('');
-    // const [bonusValue , setBonusValue] = useState('');
-    // const [email , setEmial] = useState('')
-    // const [password , setPassword] = useState('')
+function Login() {
 
-
+    const [isLoged , setIsLoged] = useState(false)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -23,29 +18,32 @@ function Login(props) {
 
     const submitFormHandler = (e) => {
         e.preventDefault();
+        setIsLoged(true);
         const loginData = {
             email: email,
             password: password,
             bonus: 320,
         }
-
-        localStorage.setItem(`${email}`, loginData.bonus);
-
-        props.getChildData(loginData);
-
         setEmail('')
-        setPassword('');    
+        setPassword(''); 
+    }
 
+
+
+    if(isLoged) {
+        return <Navigate to="/AdminPanel"/>
+    }else{
+        console.log("please login first")
     }
 
 
   return (
-    <div className=' z-50 flex-col w-full h-svh -my-5 relative px-4' >
+    <div className=' flex-col w-full h-svh -my-5 px-4' >
         <div className=' my-20 lg:w-[80%] rounded-t-xl mx-auto grid grid-cols-1 justify-between items-start w-full ring-0  rounded-lg lg:grid lg:grid-cols-2 lg:justify-center lg:gap-20 space-y-10'>
             <div className='lg:order-1 lg:py-20'>
                 <img className='rounded-t-xl h-[auto]' src={Login3d2} alt="error"  />
             </div>
-            <div className=' bg-slate-950 relative ring-1 lg:w-[500px] lg:h-[500px] px-4 rounded-lg py-10 shadow-2xl shadow-blue-500'>
+            <div className=' bg-slate-950  ring-1 lg:w-[500px] lg:h-[500px] px-4 rounded-lg py-10 shadow-2xl shadow-blue-500'>
                 <span className='hidden lg:block animate-spin rounded-full absolute -left-16 -top-12 -z-50   w-[620px] h-[620px] bg-transparent border-[20px]  border-t-purple-600 border-b-orange-600 border-l-blue-600 border-r-violet-800-600'></span>
                 <div>
                     <h1 className=' text-center py-3 text-white font-bold text-2xl'>Login Here</h1>

@@ -4,8 +4,7 @@ import Header from './Header'
 import Sidebar from './Sidebar'
 import HomeAdmin from './HomeAdmin'
 
-function AdminPanel (props) {
-  console.log("Admin Panel Data = ",props.data.email);
+function AdminPanel () {
     const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
     const OpenSidebar = () => {
@@ -13,9 +12,9 @@ function AdminPanel (props) {
     }
      
     return (
-    <div className='grid-container'>
-        <Header OpenSidebar={OpenSidebar}/>
-        <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+    <div className=''>
+        {/* <Header OpenSidebar={OpenSidebar}/> */}
+        {/* <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/> */}
         <HomeAdmin />
     </div>
     )

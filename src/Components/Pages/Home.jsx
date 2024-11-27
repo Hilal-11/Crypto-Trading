@@ -55,9 +55,7 @@ function Home() {
         <div className=' py-4 h-auto bg-[#010B13] lg:grid grid-cols-2 gap-10 lg:px-20 lg:my-12'>
           {/* Glowing Effects */}
 
-            <span className=' animate-pulse absolute top-10 left-0 w-[50%] h-[30%] lg:left-20 lg:top-20 lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur-[130px]'></span>
-            {/* <span className=' animate-pulse absolute right-0 bottom-0 w-[50%] h-[30%] lg:right-20 lg:bottom-20 lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-r from-red-500 to-orange-500 blur-[140px]'></span> */}
-
+   
 
 
 
@@ -102,6 +100,11 @@ function Home() {
          </div>
         
         </div>
+        <div>
+          <Footer/>
+        </div>
+
+
 
         
       </div>

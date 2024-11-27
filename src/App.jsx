@@ -2,29 +2,30 @@ import Navigation from "./Components/Navigation/Navigation"
 import Home from "./Components/Pages/Home"
 import Login from "./Components/Authentication/Login"
 import SignUp from "./Components/Authentication/SignUp"
+import TradeSignal from "./Components/Pages/TradeSignal"
 import PaymentSuccess from "./TransactionPages/PaymentSuccess"
 import PaymentFailed from "./TransactionPages/PaymentFailed"
-import { Route , Routes } from 'react-router-dom'
+import { Outlet, Route , Routes } from 'react-router-dom'
 import AdminPanel from "./Dashboard/AdminPanel"
-import Footer from "./Components/Pages/Footer"
 import CoinsDetailsGraph from "./Dashboard/CoinsDetailsGraph"
-import FrontEndPaymentPage from "./PaymentGateway/Client/FrontEndPaymentPage"
-import PaymentGatewayQR from "./PaymentGateway/PaymentGatewayQR"
+// import FrontEndPaymentPage from "./PaymentGateway/Client/FrontEndPaymentPage"
+import PaymentGatewayQR from './PaymentGateway/PaymentGatewayQR'
+import Deposit from "./Components/Pages/Deposit"
 import { useState } from "react"
 
 export default function App() {
 
-  const [formData, setFormData] = useState([]);
-  function receiveChilsData (receiveData) {
-    setFormData(receiveData);
-  }
+  // const [formData, setFormData] = useState([]);
+  // function receiveChilsData (receiveData) {
+  //   setFormData(receiveData);
+  // }
 
-  console.log("Parent state (formData):", formData);
+  // console.log("Parent state (formData):", formData);
 
 
   return (
     <div  className="relative bg-[#010B13]">
-      <div>
+      <div className="z-50">
         <Navigation />
       </div>
       <div className=" h-auto lg:max-w-[90%] mx-auto">
@@ -32,30 +33,19 @@ export default function App() {
 
       <div className="mx-auto py-6"> 
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/Login" element={<Login getChildData={receiveChilsData} />}></Route>
-          <Route path="/SignUp" element={<SignUp/>}></Route>
-          <Route path="/PaymentSuccess" element={<PaymentSuccess/>}></Route>
-          <Route path="/PaymentFailed" element={<PaymentFailed/>}></Route>
-          <Route path="/PaymentGateway" element={<FrontEndPaymentPage/>}></Route>
-          <Route path="/CoinsDetailsGraph" element={<CoinsDetailsGraph/>}></Route>
+          <Route path="/" element={<SignUp/>}></Route>
+          <Route path="/Login" element={<Login />}></Route>
+          <Route path="/AdminPanel" element={ <AdminPanel/>}></Route>
+          <Route path="/TradeSignal" element={<TradeSignal/>}></Route>
+          <Route path="/Home" element={<Home/>}></Route>
           <Route path="/PaymentGatewayQR" element={<PaymentGatewayQR/>}></Route>
-          <Route path="/AdminPanel" element={ <AdminPanel data={formData}  className="" />}></Route>
+          <Route path="/Deposit" element={<Deposit/>}></Route>
+          <Route path="/CoinsDetailsGraph" element={<CoinsDetailsGraph/>}></Route>
+
         </Routes>
       </div>
 
     </div>
-    {/* <div className="absolute -top-0">
-    <Routes>
-        <Route path="/AdminPanel" element={<AdminPanel className="" />}></Route>
-    </Routes>
-    </div> */}
-
-    
-
-    <div className="">
-      <Footer />
-      </div>
 
   </div>
 
