@@ -1,5 +1,4 @@
 import React from 'react'
-import paymentFailedImage from '../Assets/PaymentFailed.png'
 import { FaCoins } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom'
 function PaymentFailed() {

@@ -4,8 +4,6 @@ import { Navigate } from 'react-router-dom'
 import './Login.css'
 function Login() {
 
-    // const [isLoginSuccess , setIsLoginSuccess] = useState(true);
-
     const [isLoged , setIsLoged] = useState(false)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -32,14 +30,6 @@ function Login() {
         setEmail('')
         setPassword(''); 
     }
-
-
-    // if(localStorage.getItem('signUpEmail') === localStorage.getItem('loginEmail')  && localStorage.getItem('signUpPassword') === localStorage.getItem('loginPassword')) {
-    //     setIsLoginSuccess(true)
-    // }else{
-    //     setIsLoginSuccess(false)
-    // }
-
 
     if(isLoged) {
         return <Navigate to="/AdminPanel"/>

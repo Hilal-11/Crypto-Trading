@@ -8,20 +8,10 @@ import PaymentFailed from "./TransactionPages/PaymentFailed"
 import { Outlet, Route , Routes } from 'react-router-dom'
 import AdminPanel from "./Dashboard/AdminPanel"
 import CoinsDetailsGraph from "./Dashboard/CoinsDetailsGraph"
-// import FrontEndPaymentPage from "./PaymentGateway/Client/FrontEndPaymentPage"
 import PaymentGatewayQR from './PaymentGateway/PaymentGatewayQR'
 import Deposit from "./Components/Pages/Deposit"
-import { useState } from "react"
 
 export default function App() {
-
-  // const [formData, setFormData] = useState([]);
-  // function receiveChilsData (receiveData) {
-  //   setFormData(receiveData);
-  // }
-
-  // console.log("Parent state (formData):", formData);
-
 
   return (
     <div  className="relative bg-[#010B13]">

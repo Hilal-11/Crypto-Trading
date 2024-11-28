@@ -1,5 +1,4 @@
 import React from 'react'
-import PaymentSuccessImage from '../Assets/PaymentSuccess.png'
 import { GoCheckCircle } from "react-icons/go";
 import { useNavigate } from 'react-router-dom';
 
