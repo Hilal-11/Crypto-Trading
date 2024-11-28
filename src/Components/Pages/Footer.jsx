@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 function Footer() {
   return (
     <footer
@@ -91,7 +91,7 @@ function Footer() {
                 <path
                   d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
               </svg>
-              The Millionear
+              Millionior Trade
             </h6>
             <p className='text-white'>
              Your gateway to seamless cryptocurrency trading.
@@ -99,50 +99,26 @@ function Footer() {
               elit.
             </p>
           </div>
-          {/* <!-- Products section --> */}
-          <div className="">
-            <h6
-              className="bg-gradient-to-r from-red-500 to-orange-500 p-6 text-center text-transparent bg-clip-text mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Products
-            </h6>
-            <p className="mb-4">
-              <a className="bg-gradient-to-r from-red-500 to-orange-500 p-6 text-center text-transparent bg-clip-text text-neutral-600 dark:text-neutral-200"
-              >Angular</a>
-            </p>
-            <p className="mb-4">
-              <a className=" text-neutral-600 dark:text-neutral-200"
-              >React</a>
-            </p>
-            <p className="mb-4">
-              <a className=" text-neutral-600 dark:text-neutral-200"
-              >Vue</a>
-            </p>
-            <p>
-              <a className=" text-neutral-600 dark:text-neutral-200"
-              >Laravel</a>
-            </p>
-          </div>
-          {/* <!-- Useful links section --> */}
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start bg-gradient-to-r from-red-500 to-orange-500 p-6 text-center text-transparent bg-clip-text">
               Useful links
             </h6>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Pricing</a>
+              <Link to={'/AdminPanel'} className="text-neutral-600 dark:text-neutral-200 text-center font-bold cursor-pointer hover:underline duration-200 hover:text-blue-700"
+              >Dashboard</Link>
             </p>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Settings</a>
+              <Link to={'/TradeSignal'} className="text-neutral-600 dark:text-neutral-200 text-center font-bold cursor-pointer hover:underline duration-200 hover:text-blue-700"
+              >Signal</Link>
             </p>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Orders</a>
+              <Link to={'/Home'} className="text-neutral-600 dark:text-neutral-200 text-center font-bold cursor-pointer hover:underline duration-200 hover:text-blue-700"
+              >Guidence</Link>
             </p>
             <p>
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Help</a>
+              <Link to={'/AdminPanel'} className="text-neutral-600 dark:text-neutral-200 text-center font-bold cursor-pointer hover:underline duration-200 hover:text-blue-700"
+              >Market</Link>
             </p>
           </div>
           {/* <!-- Contact section --> */}

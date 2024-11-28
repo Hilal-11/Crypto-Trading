@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaQrcode } from "react-icons/fa";
 import { MdAddCard } from "react-icons/md";
-import QR from '.././Assets/QR.png'
+import QR from '.././Assets/QR_1.jpg'
 
 const PaymentGatewayQR = () => {
   const [activeTab, setActiveTab] = useState("Tab1");

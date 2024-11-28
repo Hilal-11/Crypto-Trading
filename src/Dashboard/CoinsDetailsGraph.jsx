@@ -1,14 +1,19 @@
 // TradingViewWidget.jsx
 import React, { useEffect, useRef, memo, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate , Navigate } from 'react-router-dom'
 function CoinsDetailsGraph() {
 
 
-  const navigate = useNavigate('');
-
 
     // Generating a randeom values
     // Generating a randeom values
+
+
+  const [isSell , setIsSell] = useState(false);
+  const [isBuy , setIsBuy] = useState(false);
+
+
+  const navigate = useNavigate('')
 
   const[prize , setPrize] = useState(0);
   const[volume , setVolume] = useState(0);
@@ -24,6 +29,27 @@ function CoinsDetailsGraph() {
   useEffect(() => {
     generateRandomValues();
   },[])
+
+  const sellHandler = () => {
+    setIsSell(true);
+    localStorage.setItem('low' , low);
+  }
+
+  const buyHandler = () => {
+    setIsBuy(true)
+    localStorage.setItem('tradePrize' , prize);
+  }
+
+  if(isSell) {
+      setTimeout(() => {
+        navigate('/PaymentFailed');
+      },2000)
+  }else if(isBuy) {
+      setTimeout(() => {
+        navigate('/PaymentSuccess')
+      } ,3000)
+  }
+
 
 
   const container = useRef();
@@ -78,8 +104,8 @@ function CoinsDetailsGraph() {
     </div>
 
     <div className='my-2 px-2 grid grid-cols-2 justifyd-center w-full  bottom-10 gap-4 lg:gap-20'>
-      <button className='py-2 lg:py-6 rounded-lg bg-blue-600 font-bold text-xl text-white '>BUY</button>
-      <button className='py-2 lg:py-6 rounded-lg  bg-red-600 font-bold text-xl text-white '>SELL</button>
+      <button onClick={ buyHandler } className='py-2 lg:py-6 rounded-lg bg-blue-600 font-bold text-xl text-white  hover:bg-slate-950 duration-300'>BUY</button>
+      <button onClick={ sellHandler } className='py-2 lg:py-6 rounded-lg  bg-red-600 font-bold text-xl text-white hover:bg-slate-950 duration-300 '>SELL</button>
     </div>
     <br />
     </div>

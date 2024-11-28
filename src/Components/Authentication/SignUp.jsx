@@ -4,10 +4,11 @@ import signUpLogImg from '../../Assets/signUpLogImg.webp'
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom'
 function SignUp() {
+
     const [isSignUp , setIsSignUp] = useState(false)
     const [formData, setFormData] = useState({
         fullName: '',
-        username: '',
+        email: '',
         password: '',
         confirmPassword: '',
         age: '',
@@ -20,17 +21,18 @@ function SignUp() {
     
       const handleSubmit = (e) => {
         e.preventDefault();
+        localStorage.setItem('signUpEmail' , formData.email)
+        localStorage.setItem('signUpPassword' , formData.password)
+
         setIsSignUp(true)
-        // Handle form submission
-        console.log(formData);
       };
 
       if(isSignUp) {
         return <Navigate to="/Login"/>
       }else{
-        console.log("please create account first")
       }
 
+      
 
 
   return (
@@ -49,7 +51,7 @@ function SignUp() {
 
             {/* Full Name */}
             <div>
-              <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="fullName">
+              <label className=" text-gray-700 text-sm font-bold mb-2" >
                 Full Name
               </label>
               <input
@@ -66,14 +68,14 @@ function SignUp() {
 
             {/* Username */}
             <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
                 Username
               </label>
               <input
-                type="text"
-                name="username"
-                id="username"
-                value={formData.username}
+                type="email"
+                name="email"
+                id="email"
+                value={formData.email}
                 onChange={handleChange}
                 className="w-full px-3 py-4 border rounded-md bg-gray-200 text-gray-700 focus:outline-none focus:border-blue-500"
                 placeholder="Enter Email :- "
@@ -83,7 +85,7 @@ function SignUp() {
 
             {/* Password */}
             <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              <label className="block text-gray-700 text-sm font-bold mb-2" >
                 Password
               </label>
               <input
@@ -100,7 +102,7 @@ function SignUp() {
 
             {/* Confirm Password */}
             <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
                 Confirm Password
               </label>
               <input
@@ -117,7 +119,7 @@ function SignUp() {
 
             {/* Age */}
             <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="age">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
                 Age
               </label>
               <input

@@ -62,7 +62,7 @@ function Home() {
             
           <div>
             <h1 className='text-4xl font-bold capitalize lg:text-6xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text'>
-            Welcome to <span className='text-white text-5xl lg:text-7xl'>Crypto Trade</span> Unique Solution and innovative approach for trading
+            Welcome to <span className='text-white text-5xl lg:text-7xl'>Millionior Trade</span> Unique Solution and innovative approach for trading
             </h1> <br /> <br />
             <p className='text-justify text-white font-medium my-5 lg:my-10'><span className=' font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text text-2xl'>Empower Your Trading Journey </span> <br /> <br />
             Dive into the world of trading with confidence and precision. <span className='font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text text-2xl'>Crypto Trade</span> is your ultimate partner for navigating the markets, offering cutting-edge tools and real-time insights to help you make smarter financial decisions.</p>

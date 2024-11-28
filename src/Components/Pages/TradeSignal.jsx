@@ -4,16 +4,6 @@ function TradeSignal() {
 
   const date = new Date();
   const format = date.toDateString();
-  // const year = date.getFullYear();
-  // const month = date.getMonth();
-  // const day = date.getDay();
-
-  // console.log(data)
-  // console.log(year)
-  // console.log(month)
-  // console.log(day)
-
-
 
   return (
     <div className=' w-full h-svh bg-transparent px-10'>

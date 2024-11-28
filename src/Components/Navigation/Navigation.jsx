@@ -5,6 +5,13 @@ import {NavLink , Link} from 'react-router-dom'
 import { clsx } from 'clsx';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../Assets/bullLogo2.png'
+
+import { MdDashboard } from "react-icons/md";
+import { FaSignal } from "react-icons/fa";
+import { GiTeacher } from "react-icons/gi";
+import { PiHandDepositBold } from "react-icons/pi";
+import { PiHandWithdrawFill } from "react-icons/pi";
+
 function Navigation() {
 
 
@@ -27,34 +34,42 @@ function Navigation() {
 
     const navLinksScreen = [ 
         {
-            id : 2,
+            id : 1,
             label : "Dashboard",
-            to : "AdminPanel"
+            to : "AdminPanel",
+            icon : <MdDashboard/>
 
         },
 
         {
-            id : 4,
+            id : 2,
             label : "Signal",
-            to : "TradeSignal"
+            to : "TradeSignal",
+            icon : <FaSignal/>
+
+        },
+        {
+            id : 3,
+            label : "Guidence",
+            to : "/Home",
+            icon : <GiTeacher/>
+
 
         },
         {
             id : 4,
-            label : "Guidence",
-            to : "/Home"
-
-        },
-        {
-            id : 6,
             label : "Deposit",
-            to : "/Deposit"
+            to : "/Deposit",
+            icon : <PiHandDepositBold/>
+
 
         },
         {
-            id : 7,
+            id : 5,
             label : "Withdraw",
-            to : "/PaymentGatewayQR"
+            to : "/PaymentGatewayQR",
+            icon : <PiHandWithdrawFill/>
+
 
         }
       
@@ -63,33 +78,43 @@ function Navigation() {
         {
             id : 1,
             label : "Dashboard",
-            to : "AdminPanel"
+            to : "AdminPanel",
+            icon : <MdDashboard/>
+
         },
 
         {
-            id : 4,
+            id : 2,
             label : "Signal",
-            to : "TradeSignal"
+            to : "TradeSignal",
+            icon : <FaSignal/>
+
+        },
+        {
+            id : 3,
+            label : "Guidence",
+            to : "/Home",
+            icon : <GiTeacher/>
+
+
+        },
+        {
+            id : 4,
+            label : "Deposit",
+            to : "/Deposit",
+            icon : <PiHandDepositBold/>
+
 
         },
         {
             id : 5,
-            label : "Guidence",
-            to : "/Home"
-
-        },
-        {
-            id : 6,
-            label : "Deposit",
-            to : "/Deposit"
-
-        },
-        {
-            id : 7,
             label : "Withdraw",
-            to : "/PaymentGatewayQR"
+            to : "/PaymentGatewayQR",
+            icon : <PiHandWithdrawFill/>
+
 
         }
+      
     ]
   return (
     <div>
@@ -109,7 +134,7 @@ function Navigation() {
                                 {
                                     navLinksScreen.map((link) => (
                                         <li onClick={ ()=> {setIsMenuBar(false)}} key={link.id} className='font-sans font-bold text-xl list-none gap-10 py-3 hover:bg-blue-500 hover:ring-1 hover:shadow-sm rounded-sm px-2 cursor-pointer'>
-                                            <span></span><NavLink to={link.to}>{link.label}</NavLink>
+                                            <NavLink className="flex gap-5 text-center" to={link.to}><span className='text-3xl'>{link.icon}</span>{link.label}</NavLink>
                                         </li>
                                     ))
                                 }
@@ -134,8 +159,8 @@ function Navigation() {
                                         <div className='py-2 px-0 text-black flex-col gap-40 '>
                                             {
                                                 navLinksMobile.map((link) => (
-                                                    <li onClick={ ()=> {SetSideBar(false)}} key={link.id} className='font-sans font-bold text-xl list-none gap-10 py-3 hover:bg-slate-100 hover:ring-1 hover:shadow-sm rounded-sm px-2 '>
-                                                        <NavLink to={link.to}>{link.label}</NavLink>
+                                                    <li onClick={ ()=> {SetSideBar(false)}} key={link.id} className=' font-sans font-bold text-xl list-none  py-3 hover:bg-slate-100 hover:ring-1 hover:shadow-sm rounded-sm px-2 '>
+                                                        <NavLink to={link.to} className="flex gap-5 text-center"><span className='text-3xl'>{link.icon}</span>{link.label}</NavLink>
                                                     </li>
                                                 ))
                                             }

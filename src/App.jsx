@@ -41,6 +41,12 @@ export default function App() {
           <Route path="/PaymentGatewayQR" element={<PaymentGatewayQR/>}></Route>
           <Route path="/Deposit" element={<Deposit/>}></Route>
           <Route path="/CoinsDetailsGraph" element={<CoinsDetailsGraph/>}></Route>
+          <Route path="/PaymentSuccess" element={<PaymentSuccess/>}></Route>
+          <Route path="/PaymentFailed" element={<PaymentFailed/>}></Route>
+
+  
+
+
 
         </Routes>
       </div>
