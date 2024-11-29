@@ -4,7 +4,12 @@ import { MdAddCard } from "react-icons/md";
 import QR from '.././Assets/QR_1.jpg'
 
 const PaymentGatewayQR = () => {
+
   const [activeTab, setActiveTab] = useState("Tab1");
+  const [showFailedTransaction , setShowFailedTransaction] = useState(false);
+  const [loader , setLoader] = useState(false);
+
+
 
     const [formData, setFormData] = useState({
       cardName: "",
@@ -12,8 +17,11 @@ const PaymentGatewayQR = () => {
       expiry: "",
       cvv: "",
     });
-  
+    
+ 
+
     const [errors, setErrors] = useState({});
+
   
     // Handle input changes
     const handleInputChange = (e) => {
@@ -39,11 +47,13 @@ const PaymentGatewayQR = () => {
   
     // Handle form submission
     const handleSubmit = (e) => {
-      console.log(formData)
+      setLoader(true)
       e.preventDefault();
       if (validateForm()) {
-        alert("Payment processed successfully!");
-        // Process payment or send data to the server here
+        setTimeout(() => {
+          setLoader(false);
+          setShowFailedTransaction(true);
+        },4000)
       }
     };
 
@@ -193,7 +203,26 @@ const PaymentGatewayQR = () => {
         >
           Pay Now
         </button>
-      </form>
+      </form> 
+
+        {
+          loader ? (
+            <div className="w-full flex justify-center py-4">
+            <span className="block w-[40px] h-[40px] bg-transparent rounded-full border-4 border-t-0 border-r-0 animate-spin border-violet-600"></span>
+          </div>
+          ) : (
+            <div></div>
+          )
+        }
+          {
+            showFailedTransaction ? (
+              <p className=" text-red-700 font-semibold py-4 px-2 text-justify" ><span className=" font-extrabold text-2xl text-red-700">Oops!</span> There was an issue processing your payment.
+To complete your transaction, please scan the QR code below using your preferred payment app.</p>
+            ) : (<div>
+              
+            </div>
+            )
+          }
       <br /> <br /> <br />
     </div>
           </div>
